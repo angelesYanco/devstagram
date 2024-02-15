@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Devstagram - @yield('titulo')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -12,6 +12,16 @@
 
     </head>
     <body>
-        <h1>Página Principal</h1>
+        <nav>
+            <a href="/">Principal</a>
+            <a href="/tienda">Tienda</a>
+            <a href="/nosotros">Nosotros</a>
+        </nav>
+        <h1>@yield('titulo')</h1>
+
+        <hr>
+
+        @yield('contenido')
+
     </body>
 </html>
