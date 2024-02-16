@@ -16,5 +16,8 @@ class RegisterController extends Controller
         //dd($request->get('email'));
 
         //Validación
+        $this->validate($request,[
+            'name' => 'required|max:15',
+        ]);
     }
 }
