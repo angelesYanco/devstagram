@@ -12,6 +12,7 @@
 
         <div class="md:w-4/12 bg-white p-6 rouded-lg shadow-xl" >
             <form action="/crear-cuenta" method="POST">
+                @csrf
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         Nombre
