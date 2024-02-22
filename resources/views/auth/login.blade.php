@@ -11,21 +11,21 @@
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rouded-lg shadow-xl" >
-            <form>
+            <form method="POST" action="{{ route('login') }}" novalidate>
                 @csrf
                 <div class="mb-5">
-                    <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Username
+                    <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Email
                     </label>
                     <input 
-                        id="username"
-                        name="username" 
-                        type="text" 
-                        placeholder="Tu Nombre de Usuario"
-                        class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
-                        value="{{ old('username') }}"                    
+                        id="email"
+                        name="email" 
+                        type="email" 
+                        placeholder="Tu Email de Registro"
+                        class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+                        value="{{ old('email') }}"                           
                     >
-                    @error('username')
+                    @error('email')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
@@ -46,7 +46,7 @@
                 </div>
                 <input 
                     type="submit"
-                    value="Crear Cuenta"
+                    value="Inciar sesión"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
                 >
             </form>
