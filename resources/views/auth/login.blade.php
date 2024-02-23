@@ -15,7 +15,9 @@
                 @csrf
 
                 @if(session('mensaje'))
-                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ session('mensaje') }}</p>
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                        {{ session('mensaje') }}
+                    </p>
                 @endif {{-- session('mensaje') --}}
 
                 <div class="mb-5">
