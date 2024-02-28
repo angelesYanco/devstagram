@@ -1,26 +1,12 @@
-// If you are using JavaScript/ECMAScript modules:
-//import Dropzone from "dropzone";
+import Dropzone from "dropzone";
 
-// If you are using CommonJS modules:
-//const { Dropzone } = require("dropzone");
+Dropzone.autoDiscover = false;
 
-let myDropzone  = new Dropzone("#my-awesome-dropzone");
-
-myDropzone  = ("#my-awesome-dropzone", { 
+const dropzone = new Dropzone('#dropzone', {
     dictDefaultMessage: 'Sube aqui tu imagen',
-    acceptedFiles: ".png,.jpg,.jpge,.gif",
+    acceptedFiles: ".png, .jpg, .jpeg, .gift",
     addRemoveLinks: true,
-    dictRemoveFile: "Borrar Archivo",
+    dictRemoveFile: 'Borrar Archivo',
     maxFiles: 1,
-    uploadMultiple: false,  
+    uploadMultiple: false
 });
-
-
-// let myDropzone  = new Dropzone("#my-awesome-dropzone", { 
-//     dictDefaultMessage: 'Sube aqui tu imagen',
-//     acceptedFiles: ".png,.jpg,.jpge,.gif",
-//     addRemoveLinks: true,
-//     dictRemoveFile: "Borrar Archivo",
-//     maxFiles: 1,
-//     uploadMultiple: false,  
-// });
