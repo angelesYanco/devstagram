@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-        
+        @stack('styles')
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}" rel="stylesheet">        
         <meta charset="UTF-8" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         <title>Devstagram - @yield('titulo')</title>
+
     </head>
     <body class="bg-gray-100">
 
