@@ -13,6 +13,9 @@ class ImagenController extends Controller
 
         $imagen = $request->file('file');
 
-        return response()->json(['imagen'=>$imagen->extension()]);
+        //return response()->json(['imagen'=>$imagen->extension()]);
+        
+        return response()->json(['imagen'=>"Probando Respuesta"]);
+
     }
 }
