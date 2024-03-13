@@ -15,12 +15,9 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-        //dd($request);  
-        //dd($request->get('email'));
 
-        // Modificar Request
-        // Error: Call to a member function add() on null
-        // $request->$request->add(['username' => Str::slug( $request->username )]);
+        // Modificar el Request
+        $request->request->add(['username' => Str::slug($request->username)]);
 
         //Validación
         $this->validate($request,[
@@ -32,9 +29,10 @@ class RegisterController extends Controller
 
         User::create([
             'name' => $request->name,
-            'username' => Str::slug( $request->username ),
+            'username' => $request->username,
             'email' => $request->email,
             'password' => $request->password
+            //'username' => Str::slug( $request->username ),
             // 'password' => Hash::make($request->password) [VERSION 9]
             
         ]);
@@ -49,6 +47,6 @@ class RegisterController extends Controller
         auth()->attempt($request->only('email','password'));
 
         // Redireccionar
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', auth()->user() );
     }
 }
